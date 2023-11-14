@@ -38,7 +38,7 @@ syscall
 
 lw $t3, hnum1
 lw $t4, hnum2
-mul $t4, hnum2
+mul $t2, $t3, $t4
 sh $t2, hres
 lw $a0, hres
 li $v0, 1
