@@ -10,7 +10,7 @@ bnum1: .byte 200
 bnum2: .byte 200
 hnum1: .half 200
 hnum2: .half 200
-
+new: .asciiz "\n"
 .text
 .globl main
 .ent main
@@ -24,17 +24,31 @@ lw $a0, wres1
 li $v0, 1
 syscall
 
+li $v0, 4
+la $a0, new
+syscall
+
 mul $t2, $t0, $t1
 sw $t2, wnum2
 lw $a0, wnum2
 li $v0, 1
 syscall
 
+li $v0, 4
+la $a0, new
+syscall
+
+
 rem $t2, $t0, $t1
 sw $t2, wres3
 lw $a0, wres3
 li $v0, 1
 syscall
+
+li $v0, 4
+la $a0, new
+syscall
+
 
 lw $t3, hnum1
 lw $t4, hnum2
@@ -44,6 +58,11 @@ lw $a0, hres
 li $v0, 1
 syscall
 
+li $v0, 4
+la $a0, new
+syscall
+
+
 lw $t5, bnum1
 lw $t6, bnum2
 div $t2, $t5, $t6
@@ -51,6 +70,11 @@ sb $t2, bres
 lw $a0, bres
 li $v0, 1
 syscall
+
+li $v0, 4
+la $a0, new
+syscall
+
 
 li $v0, 10
 syscall
