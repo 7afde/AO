@@ -21,10 +21,10 @@ lw $t1, wnum2
 add $t2, $t0, $t1
 sw $t2, wres1
 lw $a0, wres1
-li $v0, 1
+li $v0, 1      # 1 pour afficher un entier
 syscall
 
-li $v0, 4
+li $v0, 4      # 4 pour afficher une chaine 
 la $a0, new
 syscall
 

@@ -1,19 +1,27 @@
 .data
-var: .asciiz ""
+save: .space 1     # pour sauvegarder le caractere saisi
+code: .asciiz "\n"
+
 .text
 .globl main
 .ent main
 main:
 
-li $v0, 12
+li $v0, 12        # 12 pour lire le caractere
 syscall
 
-move $a0, $v0
-sub $t0, $a0, 32
+sb $v0, save   # sauvegarder le caractere
 
-sw $t0, var
-lw $a0, var
-li $v0, 11
+li $a0, 0x0a   # code ascii(\n) =10 
+li $v0, 11     
+syscall 
+
+
+lb $a0, save
+sub $t0, $a0, 32  # any letter - 32 = LETTER
+
+move $a0, $t0
+li $v0, 11        # 11 pour afficher une caractere
 syscall
 
 
