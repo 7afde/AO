@@ -1,6 +1,5 @@
 .data
 input: .asciiz "entre un entier: "
-save: .space 4
 output: .asciiz "the number you entred is: "
 .text
 .globl main
