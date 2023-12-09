@@ -16,12 +16,12 @@ mess_perim:  .asciiz "Le perimetre ="
 .ent main
 main:
 
-# *******************Invitation à lire x 
+# *******************Invitation ï¿½ lire x 
 la $a0, mess_x 
 li $v0, 4 
 syscall 
 
-# *******************lire x 
+# *******************Ecrire x 
 
 li $v0, 5
 syscall 
@@ -33,12 +33,12 @@ li $a0, 10   # code ascii(\n) =10
 li $v0, 11
 syscall 
 
-# *******************Invitation à lire y 
+# *******************Invitation ï¿½ lire y 
 la $a0, mess_y
 li $v0, 4 
 syscall 
 
-# *******************lire y
+# *******************Ecrire y
 
 li $v0, 5
 syscall 

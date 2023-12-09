@@ -18,6 +18,11 @@ main:
     syscall
     move $t0, $v0  # Stocke le nombre dans $t0
 
+    # Affiche une nouvelle ligne
+    li $v0, 4
+    la $a0, newline
+    syscall
+
     # Affiche le message indiquant que le nombre a été saisi
     li $v0, 4
     la $a0, output_msg
@@ -28,11 +33,9 @@ main:
     move $a0, $t0
     syscall
 
-    # Affiche une nouvelle ligne
-    li $v0, 4
-    la $a0, newline
-    syscall
+    
 
-    # Terminer le programme
-    li $v0, 10
-    syscall
+# Terminer le programme
+li $v0, 10
+syscall
+.end main
