@@ -1,7 +1,7 @@
 .data
     # buffer:     .space 1      # Réserve de l'espace pour stocker le caractère
     message: .asciiz "Veuillez entrer un caractere : "
-    space: .asciiz "\n"
+    space: .asciiz ""
 .text
 .globl main
 main:
